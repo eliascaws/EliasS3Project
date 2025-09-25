@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    ARTIFACT_BUCKET: s3project-artifacts-bucket
+
+phases:
+  install:
+    runtime-versions:
+      java: corretto21
+  build:
+    commands:
+      - echo "Building project..."
+      - mvn clean package
+      - echo "Copy JAR to S3..."
+      - aws s3 cp target/s3project-1.0-SNAPSHOT-jar-with-dependencies.jar s3://$ARTIFACT_BUCKET/
+artifacts:
+  files:
+    - target/s3project-1.0-SNAPSHOT-jar-with-dependencies.jar
