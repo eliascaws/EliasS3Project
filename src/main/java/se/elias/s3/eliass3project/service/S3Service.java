@@ -1,7 +1,7 @@
 package se.elias.s3.eliass3project.service;
 
 import io.github.cdimascio.dotenv.Dotenv;
-import se.elias.s3project.utility.Utils;
+import se.elias.s3.eliass3project.utility.Utils;
 import software.amazon.awssdk.auth.credentials.AwsBasicCredentials;
 import software.amazon.awssdk.auth.credentials.StaticCredentialsProvider;
 import software.amazon.awssdk.core.sync.RequestBody;
